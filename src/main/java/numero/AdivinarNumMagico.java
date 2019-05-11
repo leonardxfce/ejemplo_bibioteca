@@ -1,39 +1,53 @@
 package numero;
 
-import java.util.Scanner;
+import inicio.Consola;
+import inicio.Visual;
 
 public class AdivinarNumMagico {
 
     public static void main(String[] args) {
+        Visual ll = new Visual();
+        //Consola ll = new Consola();
 
-        Scanner sc = new Scanner(System.in);
+        ll.escribir("---------------"
+                + "\nNumero Magico"
+                + "\n-------------");
+
+        //  Scanner sc = new Scanner(System.in);
         NumeroMagico na = new NumeroMagico();
         na.crearNumeroAleatorio();
-        int rdo = na.numero;
+
+        //  int rdo = na.numero;
         //   int rdo = (int) (Math.random() * 100);
-
+        int rdo = na.numero;
         for (int i = 1; i <= 5; i++) {
-            System.out.println("---------------");
-            System.out.println("Numero Magico");
+            Consola md = new Consola();
 
-            System.out.println("--------------");
-            System.out.println("Adivine el nro? = x ");
-            int nro = sc.nextInt();
-
-            if (nro == rdo) {
-                System.out.println("Ganaste!!");
+            md.escribir("--------------");
+            md.escribir("Adivine el nro? = x ");
+            Consola cd1 = new Consola();
+            String a = cd1.leer();
+            int b = Integer.parseInt(a);
+            if (b == rdo) {
+                md.escribir("Ganaste!!");
             }
-            if (nro > rdo) {
-                System.out.println("Es menor");
+            if (b > rdo) {
+                md.escribir("Es menor");
             }
-            if (nro < rdo) {
+            if (b < rdo) {
 
-                System.out.println("Es mayor");
+                md.escribir("Es mayor");
             }
 
         }
-        System.out.println("PERDISTE... :(");
-        System.out.println("El resultado es: " + rdo);
+
+        //Consola md1 = new Consola ();
+        Visual md1 = new Visual();
+
+        md1.escribir("PERDISTE... :(");
+
+        Visual vv = new Visual();
+        vv.escribir("El rdo es: " + rdo);
     }
 
 }

@@ -2,7 +2,7 @@ package inicio;
 
 import java.util.Scanner;
 
-class Consola implements GUI {
+ public class Consola implements GUI {
 
     @Override
     public void escribir(String mensaje) {
