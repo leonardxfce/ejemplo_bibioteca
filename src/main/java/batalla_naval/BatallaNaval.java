@@ -1,5 +1,7 @@
 package batalla_naval;
 
+import java.util.Scanner;
+
 public class BatallaNaval {
     int tableroDePosicion[][] = new int[10][10];
     int tableroPrincipal[][] = new int[10][10];
@@ -9,7 +11,7 @@ public class BatallaNaval {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 tableroDePosicion[i][j] = 0;
-                tableroPrincipal[i][j]=0;
+                tableroPrincipal[i][j] = 0;
             }
         }
         llenarTableroPrincipal(tableroPrincipal);
@@ -49,7 +51,7 @@ public class BatallaNaval {
     public void llenarTableroPrincipal(int tablero[][]) {
         int aleatorioColumna;
         int aleatorioFila;
-        for(int i = 0; i < 5;i++){
+        for (int i = 0; i < 5; i++) {
             aleatorioColumna = (int) (Math.random() * 9);
             aleatorioFila = (int) (Math.random() * 9);
             if (tablero[aleatorioColumna][aleatorioFila] == 0) {
@@ -59,20 +61,6 @@ public class BatallaNaval {
             }
         }
 
-    }
-
-    //
-    public void imprimirTablero(int tablero[][]) {
-        String tableroString = "  0 1 2 3 4 5 6 7 8 9\n";
-        tableroString += "____________________\n";//Falta agregar un + atras del =
-        for (int i = 0; i < 10; i++) {
-            tableroString += letrasTablero[i] + "|";
-            for (int j = 0; j < 10; j++) {
-                tableroString += tablero[i][j] + " ";
-            }
-            tableroString += "\n";
-        }
-        System.out.println(tableroString);
     }
 
 }
