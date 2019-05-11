@@ -1,6 +1,7 @@
 package numero;
-
+import inicio.Consola;
 import java.util.Scanner;
+import inicio.Visual;
 
 public class AdivinarNumMagico {
 
@@ -8,32 +9,39 @@ public class AdivinarNumMagico {
 
         Scanner sc = new Scanner(System.in);
         NumeroMagico na = new NumeroMagico();
+        Visual cd = new Visual();
+        //Consola cd = new Consola();
+        
         na.crearNumeroAleatorio();
+        
+        
+         
         int rdo = na.numero;
         //   int rdo = (int) (Math.random() * 100);
 
         for (int i = 1; i <= 5; i++) {
-            System.out.println("---------------");
-            System.out.println("Numero Magico");
+            cd.escribir(
+                         "Numero Magico"
 
-            System.out.println("--------------");
-            System.out.println("Adivine el nro? = x ");
-            int nro = sc.nextInt();
-
+                       
+                        +"\nAdivine el nro? = x ");
+           String a = cd.leer();
+           int nro = Integer.parseInt(a);
+            
             if (nro == rdo) {
-                System.out.println("Ganaste!!");
+                cd.escribir("Ganaste!!");
             }
             if (nro > rdo) {
-                System.out.println("Es menor");
+                cd.escribir("Es menor");
             }
             if (nro < rdo) {
 
-                System.out.println("Es mayor");
+                cd.escribir("Es mayor");
             }
-
+            //KIS repeticiones de if
+            //SOC dividir las funciones en vista 
         }
-        System.out.println("PERDISTE... :(");
-        System.out.println("El resultado es: " + rdo);
+       cd.escribir("PERDISTE... :("+"\n El resultado es: " + rdo);
     }
 
 }
