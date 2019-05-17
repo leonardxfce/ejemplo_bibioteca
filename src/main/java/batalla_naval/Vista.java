@@ -1,5 +1,7 @@
 package batalla_naval;
 
+import java.util.Scanner;
+
 public class Vista {
     String tableroPrincipalVistaUsuario[][] = new String[10][10];
 
@@ -9,6 +11,56 @@ public class Vista {
                 this.tableroPrincipalVistaUsuario[i][j]="0";
             }
         }
+    }
+
+    public void escribir(int opcion){
+
+        switch (opcion){
+            case 1:
+                System.out.println("TIENES UNA FLOTA CON 5 FRAGATAS. DISTRUBUYELAS EN TU TERRITORIO.");
+                break;
+            case 2:
+                System.out.println("TE HAN HUNDIDO UNA FRAGATA!");
+                break;
+            case 3:
+                System.out.println("AGUA! AHORA ES TU TURNO");
+                break;
+            case 4:
+                System.out.println("HAS PERDIDO!!!");
+                break;
+            case 5:
+                System.out.println("YA COLOCÓ UNA FRAGATA!");
+                break;
+            case 6:
+                System.out.println("Esta posicion ya esta ocupada!!!");
+                break;
+            case 7:
+                System.out.println("AHORA TE TOCA HUNDIR LA FLOTA DE TU ENEMIGO");
+                break;
+            case 8:
+                System.out.println("HA HUNDIDO UNA FRAGATA!");
+                break;
+            case 9:
+                System.out.println("AGUA! ES TURNO DE TU OPONENTE");
+                break;
+            case 10:
+                System.out.println("HAS GANADO!!!");
+                break;
+        }
+    }
+
+    public int ingresarColumna(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("INGRESE UNA COLUMNA: ");
+        int columna = scanner.nextInt();
+        return columna;
+    }
+
+    public int ingresarFila(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("INGRESE UNA FILA: ");
+        int fila = scanner.nextInt();
+        return fila;
     }
 
     public void llenaPosicionConLetra(int columna, int fila, String letra){
