@@ -1,5 +1,5 @@
 package inicio;
-
+import numero.AdivinarNumMagico;
 class Menu {
 
     boolean mantenerJuego;
@@ -23,6 +23,8 @@ class Menu {
             switch (comando) {
                 case "1":
                     gui.escribir("Usted eligio uno.");
+                    AdivinarNumMagico juego = new AdivinarNumMagico();
+                   juego.jugarNumeroMagico(); 
                     break;
                 case "0":
                     gui.escribir("Adios. :( ");
@@ -38,4 +40,6 @@ class Menu {
     private String darOpciones() {
         return String.join("\n", opciones);
     }
+
+   
 }

@@ -3,13 +3,18 @@ package numero;
 import java.util.Scanner;
 
 public class AdivinarNumMagico {
+    
+    public AdivinarNumMagico(){
+        
+    }
 
-    public static void main(String[] args) {
+    public void jugarNumeroMagico() {
 
         Scanner sc = new Scanner(System.in);
-        NumeroMagico na = new NumeroMagico();
-        na.crearNumeroAleatorio();
-        int rdo = na.numero;
+        
+        NumeroMagico nAleatorio = new NumeroMagico();
+        nAleatorio.crearNumeroAleatorio();
+        int numeroMagico = nAleatorio.numero;
         //   int rdo = (int) (Math.random() * 100);
 
         for (int i = 1; i <= 5; i++) {
@@ -18,22 +23,22 @@ public class AdivinarNumMagico {
 
             System.out.println("--------------");
             System.out.println("Adivine el nro? = x ");
-            int nro = sc.nextInt();
+            int numeroUsuario = sc.nextInt();
 
-            if (nro == rdo) {
+            if (numeroUsuario == numeroMagico) {
                 System.out.println("Ganaste!!");
             }
-            if (nro > rdo) {
+            if (numeroUsuario > numeroMagico) {
                 System.out.println("Es menor");
             }
-            if (nro < rdo) {
+            if (numeroUsuario < numeroMagico) {
 
                 System.out.println("Es mayor");
             }
 
         }
         System.out.println("PERDISTE... :(");
-        System.out.println("El resultado es: " + rdo);
+        System.out.println("El resultado es: " + numeroMagico);
     }
 
 }
