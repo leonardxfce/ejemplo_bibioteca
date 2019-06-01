@@ -10,14 +10,14 @@ public class Archivador {
     final String paquete = "/src/main/java/baseDatos/";
 
     public String abrirArchivo(String query) {
-        String x = System.getProperty("user.dir");
-        File archivo = new File(x + paquete + query);
-        String string = null;
+        String directorio = System.getProperty("user.dir");
+        File archivo = new File(directorio + paquete + query);
+        String archivoEnFormaDeTexto = null;
         try {
-            string = FileUtils.readFileToString(archivo);
+            archivoEnFormaDeTexto = FileUtils.readFileToString(archivo);
         } catch (IOException e) {
-            System.out.println("Error" + e.toString());
+            System.out.println(e.getMessage());
         }
-        return string;
+        return archivoEnFormaDeTexto;
     }
 }
