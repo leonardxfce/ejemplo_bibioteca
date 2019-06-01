@@ -5,7 +5,7 @@ public class Inicio {
 
         System.out.println("Abrir Archivo de SQL");
         Archivador archivador = new Archivador();
-        String query = archivador.abrirArchivo();
+        String query = archivador.abrirArchivo("libro.sql");
 
         System.out.println("Crear tabla libro");
         SQLite sqlite = new SQLite("jdbc:sqlite:ejemplo.db");
