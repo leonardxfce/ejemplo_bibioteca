@@ -10,6 +10,7 @@ public class SQLite {
     Connection conexion;
     String nombreArchivo;
     Statement statement;
+    final String protocolo = "jdbc:sqlite:";
 
     public SQLite(String rutaArchivo) {
         this.nombreArchivo = rutaArchivo;
@@ -17,7 +18,7 @@ public class SQLite {
 
     public void conectar() {
         try {
-            conexion = DriverManager.getConnection(this.nombreArchivo);
+            conexion = DriverManager.getConnection(protocolo + this.nombreArchivo);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -29,15 +30,15 @@ public class SQLite {
             statement.execute(tabla);
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
-    public void apagar(){
+    public void apagar() {
         try {
             this.conexion.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

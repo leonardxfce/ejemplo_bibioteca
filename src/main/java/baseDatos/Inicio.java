@@ -8,9 +8,11 @@ public class Inicio {
         String query = archivador.abrirArchivo("libro.sql");
 
         System.out.println("Crear tabla libro");
-        SQLite sqlite = new SQLite("jdbc:sqlite:ejemplo.db");
+        SQLite sqlite = new SQLite("ejemplo.db");
         sqlite.conectar();
         sqlite.crearTabla(query);
         sqlite.apagar();
+        
+        System.out.println("Fin");
     }
 }

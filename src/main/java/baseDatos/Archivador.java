@@ -7,9 +7,11 @@ import java.io.IOException;
 
 public class Archivador {
 
+    final String paquete = "/src/main/java/baseDatos/";
+
     public String abrirArchivo(String query) {
         String x = System.getProperty("user.dir");
-        File archivo = new File(x + "/src/main/java/baseDatos/" + query);
+        File archivo = new File(x + paquete + query);
         String string = null;
         try {
             string = FileUtils.readFileToString(archivo);
