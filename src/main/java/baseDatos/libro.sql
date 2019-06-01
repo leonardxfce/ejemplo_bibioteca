@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS libro (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    ISBN INT
+);
