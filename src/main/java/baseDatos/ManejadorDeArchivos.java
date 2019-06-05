@@ -5,17 +5,17 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
-public class Archivador {
+class ManejadorDeArchivos {
 
-    final String paquete = "/src/main/java/baseDatos/";
+    String paquete = "/src/main/java/baseDatos/";
 
-    public String abrirArchivo(String query) {
+    String abrirArchivo(String nombreDeArchivo) {
         String directorio = System.getProperty("user.dir");
-        File archivo = new File(directorio + paquete + query);
+        File archivo = new File(directorio + paquete + nombreDeArchivo);
         String archivoEnFormaDeTexto = null;
         try {
             archivoEnFormaDeTexto = FileUtils.readFileToString(archivo);
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return archivoEnFormaDeTexto;
