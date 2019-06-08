@@ -7,6 +7,6 @@ public class Inicio {
         SQLite sqlite = new SQLite("ejemplo.db");
         sqlite.conectar();
         sqlite.crearTabla(query);
-        sqlite.apagar();
+        // sqlite.apagar();
     }
 }
