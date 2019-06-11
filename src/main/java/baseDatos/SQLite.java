@@ -21,6 +21,43 @@ class SQLite {
         }
     }
 
+    void crearTablaSocio() {
+        String sql = " " +
+                " CREATE TABLE " +
+                " IF NOT EXISTS " +
+                " SOCIOS " +
+                " ( " +
+                " ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                " NOMBRE TEXT, " +
+                " APELLIDO TEXT " +
+                " ) ";
+        this.ejecutarMiSQL(sql);
+    }
+
+
+    void ejecutarMiSQL(String sql) {
+        try {
+            Statement consulta = conexion.createStatement();
+            consulta.execute(sql);
+            consulta.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    void insertarSocio() {
+        try {
+            String sql = "INSERT INTO SOCIOS VALUES(NULL,?,?)";
+            PreparedStatement consulta = conexion.prepareStatement(sql);
+            consulta.setString(1, "Leoanrdo");
+            consulta.setString(2, "ARAOZ");
+            consulta.execute();
+            consulta.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     // en SQL viene el codigo para crear la tabla
     void crearTabla(String sql) {
         try {
@@ -32,7 +69,7 @@ class SQLite {
         }
     }
 
-    void insertarUnLibro(){
+    void insertarUnLibro() {
         try {
             consulta = this.conexion.createStatement();
             consulta.execute("INSERT INTO libro VALUES(NULL,'JUAN' ,100)");
@@ -43,7 +80,7 @@ class SQLite {
 
     }
 
-    void mostrarDatos(){
+    void mostrarDatos() {
         try {
             consulta = this.conexion.createStatement();
             ResultSet tabla = consulta.executeQuery("SELECT * FROM libro");
@@ -58,7 +95,7 @@ class SQLite {
         }
     }
 
-    void borrarDatosDeLaTabla(){
+    void borrarDatosDeLaTabla() {
         try {
             consulta = this.conexion.createStatement();
             boolean a = consulta.execute("DELETE FROM libro");
