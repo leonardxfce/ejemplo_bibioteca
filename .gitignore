@@ -126,3 +126,4 @@ nbdist/
 target/
 # End of https://www.gitignore.io/api/java,netbeans,intellij+all
 nbproject/
+*.sqlite

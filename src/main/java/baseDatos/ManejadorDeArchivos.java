@@ -7,7 +7,7 @@ import java.io.IOException;
 
 class ManejadorDeArchivos {
 
-    String paquete = "/src/main/java/baseDatos/";
+    String paquete = "/src/main/resources/";
 
     String abrirArchivo(String nombreDeArchivo) {
         String directorio = System.getProperty("user.dir");
