@@ -25,7 +25,7 @@ public class SQLite {
         }
     }
 
-    void crearTablaSocio() {
+    /*void crearTablaSocio() {
         String sql = " " +
                 " CREATE TABLE " +
                 " IF NOT EXISTS " +
@@ -36,7 +36,7 @@ public class SQLite {
                 " APELLIDO TEXT " +
                 " ) ";
         this.ejecutarMiSQL(sql);
-    }
+    }*/
 
 
     public void ejecutarMiSQL(String sql) {
@@ -49,7 +49,7 @@ public class SQLite {
         }
     }
 
-    void insertarSocio() {
+    /*void insertarSocio() {
         try {
             String sql = "INSERT INTO SOCIOS VALUES(NULL,?,?)";
             PreparedStatement consulta = conexion.prepareStatement(sql);
@@ -60,31 +60,18 @@ public class SQLite {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     // en SQL viene el codigo para crear la tabla
-    void crearTabla(String sql) {
-        try {
-            consulta = this.conexion.createStatement();
-            consulta.execute(sql);
-            consulta.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
+    /*void crearTabla(String sql) {
+        this.ejecutarMiSQL(sql);
+    }*/
 
-    void insertarUnLibro() {
-        try {
-            consulta = this.conexion.createStatement();
-            consulta.execute("INSERT INTO libro VALUES(NULL,'JUAN' ,100)");
-            consulta.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    /*void insertarUnLibro() {
+        this.ejecutarMiSQL("INSERT INTO libro VALUES(NULL,'JUAN' ,100)");
+    }*/
 
-    }
-
-    void mostrarDatos() {
+    /*void mostrarDatosDeLaTablaLibro() {
         try {
             consulta = this.conexion.createStatement();
             ResultSet tabla = consulta.executeQuery("SELECT * FROM libro");
@@ -97,16 +84,16 @@ public class SQLite {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    void borrarDatosDeLaTabla() {
+    /*void borrarDatosDeLaTablaLibro() {
         try {
             consulta = this.conexion.createStatement();
             boolean a = consulta.execute("DELETE FROM libro");
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     void apagar() {
         try {

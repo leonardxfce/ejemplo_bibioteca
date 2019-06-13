@@ -1,64 +1,58 @@
 package batalla_naval;
-
+import inicio.GUI;
 import java.util.Scanner;
 
 public class Vista {
     String tableroPrincipalVistaUsuario[][] = new String[10][10];
+    GUI vistaGUI;
 
-    public Vista(){
-        for (int i=0;i<10;i++){
-            for (int j=0;j<10;j++){
-                this.tableroPrincipalVistaUsuario[i][j]="0";
-            }
-        }
-    }
-
-    public void escribir(int opcion){
+    public void mostrarPorPantalla(int opcion){
 
         switch (opcion){
             case 1:
-                System.out.println("TIENES UNA FLOTA CON 5 FRAGATAS. DISTRUBUYELAS EN TU TERRITORIO.");
+
+               vistaGUI.escribir("TIENES UNA FLOTA CON 5 FRAGATAS. DISTRUBUYELAS EN TU TERRITORIO.");
                 break;
             case 2:
-                System.out.println("TE HAN HUNDIDO UNA FRAGATA!");
+                vistaGUI.escribir("TE HAN HUNDIDO UNA FRAGATA!");
                 break;
             case 3:
-                System.out.println("AGUA! AHORA ES TU TURNO");
+                vistaGUI.escribir("AGUA! AHORA ES TU TURNO");
                 break;
             case 4:
-                System.out.println("HAS PERDIDO!!!");
+                vistaGUI.escribir("HAS PERDIDO!!!");
                 break;
             case 5:
-                System.out.println("YA COLOCÓ UNA FRAGATA!");
+                vistaGUI.escribir("YA COLOCÓ UNA FRAGATA!");
                 break;
             case 6:
-                System.out.println("Esta posicion ya esta ocupada!!!");
+                vistaGUI.escribir("Esta posicion ya esta ocupada!!!");
                 break;
             case 7:
-                System.out.println("AHORA TE TOCA HUNDIR LA FLOTA DE TU ENEMIGO");
+                vistaGUI.escribir("AHORA TE TOCA HUNDIR LA FLOTA DE TU ENEMIGO");
                 break;
             case 8:
-                System.out.println("HA HUNDIDO UNA FRAGATA!");
+                vistaGUI.escribir("HA HUNDIDO UNA FRAGATA!");
                 break;
             case 9:
-                System.out.println("AGUA! ES TURNO DE TU OPONENTE");
+                vistaGUI.escribir("AGUA! ES TURNO DE TU OPONENTE");
                 break;
             case 10:
-                System.out.println("HAS GANADO!!!");
+                vistaGUI.escribir("HAS GANADO!!!");
                 break;
         }
     }
 
     public int ingresarColumna(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("INGRESE UNA COLUMNA: ");
+        vistaGUI.escribir("INGRESE UNA COLUMNA: ");
         int columna = scanner.nextInt();
         return columna;
     }
 
     public int ingresarFila(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("INGRESE UNA FILA: ");
+        vistaGUI.escribir("INGRESE UNA FILA: ");
         int fila = scanner.nextInt();
         return fila;
     }
@@ -79,7 +73,7 @@ public class Vista {
             }
             tableroString += "\n";
         }
-        System.out.println(tableroString);
+        vistaGUI.escribir(tableroString);
     }
 
     public void imprimirTableroInt(int tablero[][]) {
@@ -93,7 +87,7 @@ public class Vista {
             }
             tableroString += "\n";
         }
-        System.out.println(tableroString);
+        vistaGUI.escribir(tableroString);
     }
 
 }
