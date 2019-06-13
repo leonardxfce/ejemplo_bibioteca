@@ -8,7 +8,7 @@ public class ManejadorSocio {
     
     SQLite sqLite;
     ManejadorDeArchivos ma;
-    Libro libro;
+    Socio socio;
     
      ManejadorSocio(){
         sqLite = new SQLite();
