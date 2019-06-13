@@ -3,14 +3,14 @@ package baseDatos;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
-import java.io.IOException;
 
-class ManejadorDeArchivos {
+public class ManejadorDeArchivos {
 
     String paquete = "/src/main/resources/";
+    String directorioDeEjecucion = "user.dir";
 
-    String abrirArchivo(String nombreDeArchivo) {
-        String directorio = System.getProperty("user.dir");
+    public String abrirArchivo(String nombreDeArchivo) {
+        String directorio = System.getProperty(directorioDeEjecucion);
         File archivo = new File(directorio + paquete + nombreDeArchivo);
         String archivoEnFormaDeTexto = null;
         try {

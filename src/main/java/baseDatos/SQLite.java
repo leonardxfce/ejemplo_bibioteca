@@ -2,15 +2,19 @@ package baseDatos;
 
 import java.sql.*;
 
-class SQLite {
+public class SQLite {
 
     Connection conexion;
     String nombreArchivo;
     Statement consulta;
     String protocolo = "jdbc:sqlite:";
 
-    SQLite(String rutaArchivo) {
+    public SQLite(String rutaArchivo) {
         this.nombreArchivo = rutaArchivo;
+    }
+
+    public SQLite() {
+
     }
 
     void conectar() {
@@ -35,7 +39,7 @@ class SQLite {
     }
 
 
-    void ejecutarMiSQL(String sql) {
+    public void ejecutarMiSQL(String sql) {
         try {
             Statement consulta = conexion.createStatement();
             consulta.execute(sql);
