@@ -10,14 +10,29 @@ public class ManejadorSocio {
     ManejadorDeArchivos ma;
     Socio socio;
     
-     ManejadorSocio(){
-        sqLite = new SQLite();
+     public ManejadorSocio(){
+        sqLite = new SQLite("BaseDatos.db");
         ma = new ManejadorDeArchivos();
+         sqLite.conectar();
+
+
     }
 
-    void crearTabla(){
+    public void crearTabla(){
         String sql = ma.abrirArchivo("socio.sql");
         sqLite.ejecutarMiSQL(sql);
+        
     }
-    
+        public void insertarSocio(Socio socio){
+        String nombre = socio.nombre;
+        String apellido = socio.apellido;
+          String sql = "INSERT INTO socio " +
+                " VALUES (NULL," + 
+                "'" + nombre + "'," +
+                "'" + apellido + "'" +
+                ")";
+          
+         //   System.out.println(sql);
+        sqLite.ejecutarMiSQL(sql);
+}
 }
