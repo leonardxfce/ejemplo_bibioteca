@@ -17,7 +17,7 @@ public class SQLite {
 
     }
 
-    void conectar() {
+    public void conectar() {
         try {
             conexion = DriverManager.getConnection(protocolo + this.nombreArchivo);
         } catch (Exception e) {
@@ -42,7 +42,7 @@ public class SQLite {
     public void ejecutarMiSQL(String sql) {
         try {
             Statement consulta = conexion.createStatement();
-            consulta.execute(sql);
+            consulta.executeUpdate(sql);
             consulta.close();
         } catch (SQLException e) {
             e.printStackTrace();

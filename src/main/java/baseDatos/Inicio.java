@@ -1,14 +1,14 @@
 package baseDatos;
-
+import modelos.Libro;
+import modelos.ManejadorLibro;
 public class Inicio {
     public static void main(String[] args) {
-        SQLite sqlite = new SQLite("ejemplo.sqlite");
-        ManejadorDeArchivos ma = new ManejadorDeArchivos();
-        String sqlDeTablaLibro = ma.abrirArchivo("libro.sql");
-        String sqlDeTablaSocio = ma.abrirArchivo("socio.sql");
-        sqlite.conectar();
-        sqlite.ejecutarMiSQL(sqlDeTablaLibro);
-        sqlite.ejecutarMiSQL(sqlDeTablaSocio);
-        sqlite.apagar();
+      ManejadorLibro miLibro = new ManejadorLibro();
+      miLibro.crearTabla();
+      
+      Libro Librito = new Libro();
+      Librito.setISBN(1000);
+      Librito.setNombre("El pato");
+      miLibro.insertarLibro(Librito);
     }
 }
