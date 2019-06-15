@@ -17,7 +17,7 @@ public class SQLite {
 
     }
 
-    void conectar() {
+    public void conectar() {
         try {
             conexion = DriverManager.getConnection(protocolo + this.nombreArchivo);
         } catch (Exception e) {

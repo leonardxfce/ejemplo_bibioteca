@@ -10,5 +10,18 @@ package modelos;
  * @author Vaio
  */
 public class Socio {
-    
+    String nombre;
+    String apellido;
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido= apellido;
+    }
+
+    public void guardar() {
+        System.out.println("Guardado en la BD");
+    } 
 }
