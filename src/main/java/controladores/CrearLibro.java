@@ -16,6 +16,5 @@ public class CrearLibro implements Comando {
 
         libro.setNombre(nombre);
         libro.setISBN(ISBN);
-        libro.guardar();
     }
 }

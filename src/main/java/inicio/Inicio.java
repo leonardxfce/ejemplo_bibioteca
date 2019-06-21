@@ -1,17 +1,19 @@
 package inicio;
 
-import utilidades.ManejadorDeArchivos;
 import baseDatos.SQLite;
+import modelos.Libro;
+import modelos.ManejadorLibro;
 
 public class Inicio {
     public static void main(String[] args) {
         SQLite sqlite = new SQLite("ejemplo.sqlite");
-        ManejadorDeArchivos ma = new ManejadorDeArchivos();
-        String sqlDeTablaLibro = ma.abrirArchivo("libro.sql");
-        String sqlDeTablaSocio = ma.abrirArchivo("socio.sql");
         sqlite.conectar();
-        sqlite.ejecutarMiSQL(sqlDeTablaLibro);
-        sqlite.ejecutarMiSQL(sqlDeTablaSocio);
+        ManejadorLibro ml = new ManejadorLibro(sqlite);
+        ml.crearTabla();
+        Libro libro = new Libro();
+        libro.setNombre("100 años de soledad");
+        libro.setISBN(100);
+        ml.insertar(libro);
         sqlite.apagar();
     }
 }

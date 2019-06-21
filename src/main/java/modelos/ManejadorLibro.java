@@ -1,7 +1,7 @@
 package modelos;
 
-import utilidades.ManejadorDeArchivos;
 import baseDatos.SQLite;
+import utilidades.ManejadorDeArchivos;
 
 public class ManejadorLibro {
 
@@ -9,13 +9,20 @@ public class ManejadorLibro {
     ManejadorDeArchivos ma;
     Libro libro;
 
-    ManejadorLibro(){
-        sqLite = new SQLite();
+    public ManejadorLibro(SQLite sqLite) {
+        this.sqLite = sqLite;
         ma = new ManejadorDeArchivos();
     }
 
-    void crearTabla(){
+    public void crearTabla() {
         String sql = ma.abrirArchivo("libro.sql");
+        sqLite.ejecutarMiSQL(sql);
+    }
+
+    public void insertar(Libro libro) {
+        String sql = ma.abrirArchivo("nuevo_libro.sql");
+        sql = sql.replace("NOMBRE", libro.nombre);
+        sql = sql.replace("ISBN", Integer.toString(libro.ISBN));
         sqLite.ejecutarMiSQL(sql);
     }
 }

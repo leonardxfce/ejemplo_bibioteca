@@ -116,8 +116,4 @@ public class SQLite {
         }
     }
 
-    // Cuando manejamos elementos
-    // externos al codigo: BD, servidores, UI
-    // es muy dificil hacer test
-    // unitario => integracion => acceptacion
 }
