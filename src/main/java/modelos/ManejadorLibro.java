@@ -1,6 +1,6 @@
 package modelos;
 
-import baseDatos.ManejadorDeArchivos;
+import utilidades.ManejadorDeArchivos;
 import baseDatos.SQLite;
 
 public class ManejadorLibro {

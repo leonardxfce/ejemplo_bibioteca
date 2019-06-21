@@ -1,6 +1,6 @@
 package inicio;
 
-public interface GUI {
+public interface UserInterface {
     void escribir(String mensaje);
     String leer();
 }
