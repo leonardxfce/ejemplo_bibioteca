@@ -23,6 +23,7 @@ public class ManejadorLibro {
         String sql = ma.abrirArchivo("nuevo_libro.sql");
         sql = sql.replace("NOMBRE", libro.nombre);
         sql = sql.replace("ISBN", Integer.toString(libro.ISBN));
+      
         sqLite.ejecutarMiSQL(sql);
     }
 }
