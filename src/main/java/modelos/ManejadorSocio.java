@@ -24,15 +24,20 @@ public class ManejadorSocio {
       public void crearTabla() {
         String sql = ma.abrirArchivo("socio.sql");
         sqLite.ejecutarMiSQL(sql);
-        
     }
 
        public void insertar(Socio socio) {
         String sql = ma.abrirArchivo("nuevo_socio.sql");
         sql = sql.replace("NOMBRE", socio.nombre);
         sql = sql.replace("APELLIDO", socio.apellido);
-          
         sqLite.ejecutarMiSQL(sql);
     }
+       public void borrar(Socio socio){
+        String sql = ma.abrirArchivo("borrar_socio.sql");
+        sql = sql.replace("NOMBRE", socio.nombre);
+        sql = sql.replace("APELLIDO", socio.apellido);
+        sqLite.ejecutarMiSQL(sql);
+        
+       }
     
 }
