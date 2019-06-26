@@ -26,5 +26,10 @@ public class ManejadorSocio {
         sqLite.ejecutarMiSQL(sql);
         
     }
-
+    public void borrarSocio(Socio socio, Socio socio2){
+        String sql = ms.abrirArchivo("borrar_socio.sql");
+       sql = sql.replace("NOMBRE2", socio.nombre);
+       sql = sql.replace("APELLIDO2", socio.apellido);
+         sqLite.ejecutarMiSQL(sql);
+    }
 }

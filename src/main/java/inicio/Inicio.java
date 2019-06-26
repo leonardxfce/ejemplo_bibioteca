@@ -13,16 +13,24 @@ public class Inicio {
         ManejadorLibro ml = new ManejadorLibro(sqlite);
         ml.crearTabla();
         Libro libro = new Libro();
-        libro.setNombre("un perro roto");
-        libro.setISBN(100);
+        libro.setNombre("SOLCITO");
+        libro.setISBN(123);
         ml.insertar(libro);
+        ml.modificarLibrito(libro);
         
         ManejadorSocio ms = new ManejadorSocio(sqlite);
         ms.crearTabla();
         Socio socio = new Socio();
         socio.setNombre("Martin");
         socio.setApellido("Araoz");
+        Socio socio2 = new Socio();
+        socio2.setNombre("Pedro");
+        socio2.setApellido("Sa");
         ms.insertar(socio);
+        ms.insertar(socio2);
+        
+       
+       ms.borrarSocio(socio,socio2);
         sqlite.apagar();
     }
 }

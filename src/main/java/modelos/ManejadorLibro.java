@@ -25,4 +25,11 @@ public class ManejadorLibro {
         sql = sql.replace("ISBN", Integer.toString(libro.ISBN));
         sqLite.ejecutarMiSQL(sql);
     }
+    public void modificarLibrito(Libro libro){
+        String sql = ma.abrirArchivo("modificar_libro.sql");
+        sql = sql.replace("X", libro.nombre);
+        sql = sql.replace("Z", Integer.toString(libro.ISBN));
+        sqLite.ejecutarMiSQL(sql);
+        //System.out.println(sql);
+    }
 }
