@@ -29,16 +29,16 @@ public class ManejadorLibro {
     public void borrar(Libro libro){
         String sql = ma.abrirArchivo("borrar_libro.sql");
         sql = sql.replace("NOMBRE", libro.nombre);
-        sql = sql.replace("ISBN", Integer.toString(libro.ISBN));
+        sql = sql.replace("VALOR1", Integer.toString(libro.ISBN));
         //System.out.println(sql);
-        sqLite.ejecutarMiSQL(sql);
+       sqLite.ejecutarMiSQL(sql);
     }
     public void modificar (Libro libro){
      String sql = ma.abrirArchivo("actualizar_libro.sql");
-        sql = sql.replace("NOMBRE", libro.nombre);
-        sql = sql.replace("ISBN", Integer.toString(libro.ISBN));
-        System.out.println(sql);
-        //sqLite.ejecutarMiSQL(sql);   
+        sql = sql.replace("VALOR3", libro.nombre);
+        sql = sql.replace("VALOR4", Integer.toString(libro.ISBN));
+        //System.out.println(sql);
+        sqLite.ejecutarMiSQL(sql);   
     }
     
 }

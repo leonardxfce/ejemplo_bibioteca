@@ -1,0 +1,1 @@
+UPDATE socio SET nombre= 'VALOR5' WHERE apellido = 'VALOR6';

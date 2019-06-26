@@ -1,1 +1,1 @@
-DELETE FROM libro WHERE nombre = 'NOMBRE' AND ISBN = 'ISBN';
+DELETE FROM libro WHERE nombre = 'NOMBRE' AND ISBN = VALOR1;

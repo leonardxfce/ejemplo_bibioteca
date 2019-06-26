@@ -1,1 +1,1 @@
-UPDATE  libro SET NOMBRE = '' WHERE ISBN = ''; 
+UPDATE  libro SET nombre = 'VALOR3' WHERE ISBN = VALOR4; 

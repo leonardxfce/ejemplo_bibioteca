@@ -39,5 +39,13 @@ public class ManejadorSocio {
         sqLite.ejecutarMiSQL(sql);
         
        }
+       public void modificar (Socio socio){
+        String sql = ma.abrirArchivo("actualizar_socio.sql");
+        sql = sql.replace("VALOR5", socio.nombre);
+        sql = sql.replace("VALOR6", socio.apellido);
+        //System.out.println(sql);
+        sqLite.ejecutarMiSQL(sql);   
+    }
+    
     
 }
