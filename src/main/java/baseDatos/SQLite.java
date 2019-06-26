@@ -20,6 +20,7 @@ public class SQLite {
     public void conectar() {
         try {
             conexion = DriverManager.getConnection(protocolo + this.nombreArchivo);
+            this.ejecutarMiSQL(" PRAGMA encoding = 'UTF-8'; ");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -47,6 +48,18 @@ public class SQLite {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public ResultSet obtenerDatos(String sql) {
+        try {
+            Statement consulta = conexion.createStatement();
+            ResultSet datos = consulta.executeQuery(sql);
+            datos.next();
+            return datos;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     void insertarSocio() {

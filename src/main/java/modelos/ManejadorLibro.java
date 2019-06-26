@@ -3,6 +3,9 @@ package modelos;
 import baseDatos.SQLite;
 import utilidades.ManejadorDeArchivos;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class ManejadorLibro {
 
     SQLite sqLite;
@@ -24,5 +27,19 @@ public class ManejadorLibro {
         sql = sql.replace("NOMBRE", libro.nombre);
         sql = sql.replace("ISBN", Integer.toString(libro.ISBN));
         sqLite.ejecutarMiSQL(sql);
+    }
+
+    public Libro darUno(int ISBN){
+        String sql = ma.abrirArchivo("nuevo_libro.sql");
+        ResultSet datos = sqLite.obtenerDatos(sql);
+        libro = new Libro();
+        try {
+            libro.setNombre((String) datos.getObject("nombre"));
+            libro.setISBN((Integer) datos.getObject("ISBN"));
+            return libro;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
