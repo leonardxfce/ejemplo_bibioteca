@@ -1,0 +1,1 @@
+SELECT * FROM socio WHERE nro = ID LIMIT 1;
