@@ -29,8 +29,9 @@ public class ManejadorLibro {
         sqLite.ejecutarMiSQL(sql);
     }
 
-    public Libro darUno(int ISBN){
-        String sql = ma.abrirArchivo("nuevo_libro.sql");
+    public Libro darUno(int ISBN) {
+        String sql = ma.abrirArchivo("libro_por_isbn.sql");
+        sql = sql.replace("ID", Integer.toString(ISBN));
         ResultSet datos = sqLite.obtenerDatos(sql);
         libro = new Libro();
         try {
