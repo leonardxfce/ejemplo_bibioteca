@@ -14,12 +14,13 @@ public class ManejadorSocio {
     }
 
     public void crearTabla() {
-        String sql = ma.abrirArchivo("socio.sql");
+        String sql = ma.abrirArchivo("tabla_socio.sql");
         sqLite.ejecutarMiSQL(sql);
     }
 
     public void insertar(Socio socio) {
         String sql = ma.abrirArchivo("nuevo_socio.sql");
+        sql = sql.replace("NRO", Integer.toString(socio.nro));
         sql = sql.replace("NOMBRE", socio.nombre);
         sql = sql.replace("APELLIDO",socio.apellido);
         sqLite.ejecutarMiSQL(sql);

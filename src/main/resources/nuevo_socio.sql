@@ -1,1 +1,1 @@
-INSERT INTO socio VALUES (NULL, 'NOMBRE' , 'APELLIDO' )
+insert into socio values (null, NRO ,'NOMBRE' , 'APELLIDO' )
