@@ -1,9 +1,9 @@
 package modelos;
 
 public class Socio {
-    int nro;
-    String nombre;
-    String apellido;
+    public int nro;
+    public String nombre;
+    public String apellido;
 
     public int getNro() {
         return nro;

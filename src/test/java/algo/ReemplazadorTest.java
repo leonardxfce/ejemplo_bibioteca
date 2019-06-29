@@ -9,13 +9,48 @@ public class ReemplazadorTest {
 
     @Test
     public void insertarSocioSQL() {
-        Reemplazador re =  new Reemplazador();
-        Socio so =  new Socio();
+        Reemplazador re = new Reemplazador();
+        Socio so = new Socio();
         so.setApellido("Araoz");
         so.setNombre("Leonardo");
         so.setNro(100);
         String resultado = re.insertarSocioSQL(so);
-        String esperado = "INSERT INTO  SOCIO VALUES (NULL, 'Leonardo', 'Araoz', 100);";
-        assertEquals(esperado,resultado);
+        String esperado = "INSERT INTO SOCIO VALUES (NULL, 'Leonardo', 'Araoz', 100);";
+        assertEquals(esperado, resultado);
+    }
+
+    @Test
+    public void borrarSocioSQL() {
+        Reemplazador re = new Reemplazador();
+        Socio so = new Socio();
+        so.setApellido("Araoz");
+        so.setNombre("Leonardo");
+        so.setNro(100);
+        String resultado = re.borrarSocioSQL(so);
+        String esperado = "DELETE FROM SOCIO WHERE NRO='100' AND APELLIDO='Araoz'";
+        assertEquals(esperado, resultado);
+    }
+
+    @Test
+    public void selecionarSocioSQL() {
+        Reemplazador re = new Reemplazador();
+        Socio so = new Socio();
+        so.setApellido("Araoz");
+        so.setNombre("Leonardo");
+        so.setNro(100);
+        String resultado = re.seleccionarSocioSQL(so);
+        String esperado = "SELECT * FROM SOCIO WHERE NRO='100';";
+        assertEquals(esperado, resultado);
+    }
+     @Test
+    public void modificarSocioSQL() {
+        Reemplazador re = new Reemplazador();
+        Socio so = new Socio();
+        so.setApellido("Araoz");
+        so.setNombre("Sebastian");
+        so.setNro(100);
+        String resultado = re.modificarSocioSQL(so);
+        String esperado = "UPDATE SOCIO SET NOMBRE='Sebastian' WHERE NRO='100';";
+        assertEquals(esperado, resultado);
     }
 }
