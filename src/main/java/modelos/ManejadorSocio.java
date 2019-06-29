@@ -1,6 +1,8 @@
 package modelos;
 
 import baseDatos.SQLite;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import utilidades.ManejadorDeArchivos;
 
 public class ManejadorSocio {
@@ -25,5 +27,18 @@ public class ManejadorSocio {
         sql = sql.replace("APELLIDO",socio.apellido);
         sqLite.ejecutarMiSQL(sql);
     }
-
+       public Socio darUno(int nro) {
+        String sql = ma.abrirArchivo("socio_por_nro.sql");
+        sql = sql.replace("ID", Integer.toString(nro));
+        ResultSet datos = sqLite.obtenerDatos(sql);
+        socio = new Socio();
+        try {
+            socio.setNombre((String) datos.getObject("nombre"));
+            socio.setNro((Integer) datos.getObject("ISBN"));
+            return socio;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

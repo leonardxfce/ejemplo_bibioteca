@@ -1,1 +1,1 @@
-SELECT * FROM socio WHERE nro = NRO;
+SELECT * FROM socio WHERE NRO = ID;
