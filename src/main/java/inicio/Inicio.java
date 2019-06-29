@@ -14,22 +14,26 @@ public class Inicio {
         ml.crearTabla();
         Libro libro = new Libro();
         libro.setNombre("100 años de soledad");
-        libro.setISBN(100);
-        ml.insertar(libro);
-
-        libro.setNombre("Pedro Urdemales");
         libro.setISBN(200);
         ml.insertar(libro);
 
-        Libro x = ml.darUno(100);
+        libro.setNombre("Mr Pickles");
+        libro.setISBN(300);
+        ml.insertar(libro);
+
+        Libro x = ml.darUno(300);
         System.out.println(x);
 
         ManejadorSocio ms = new ManejadorSocio(sqlite);
         ms.crearTabla();
         Socio socio = new Socio();
-        socio.setNombre("Pablito");
-        socio.setApellido("Clavito");
+        socio.setNombre("Percebe");
+        socio.setApellido("Papa");
+        socio.setNro(1);
         ms.insertar(socio);
+        Socio z = ms.darUno(1);
+        System.out.println(z);
+        
 
         sqlite.apagar();
     }

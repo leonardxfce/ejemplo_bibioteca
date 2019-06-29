@@ -1,9 +1,13 @@
 package modelos;
 
 public class Socio {
-    int nro;
-    String nombre;
-    String apellido;
+    public int nro;
+    public String nombre;
+    public String apellido;
+
+    public void Socio() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public int getNro() {
         return nro;
