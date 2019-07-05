@@ -1,0 +1,9 @@
+DRY: Se podria decir que no se uso, pues fue muy poco
+codigo escrito pero no fue repetitivo.
+
+YAGNI: Pues solo agregue lo necesario.
+
+SoC: Separe bien las responsabilidades para no tener 
+un alto acoplamiento.
+
+KISS: Es un codigo simple y entendible.

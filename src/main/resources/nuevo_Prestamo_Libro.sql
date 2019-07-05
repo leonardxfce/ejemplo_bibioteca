@@ -1,0 +1,1 @@
+INSERT INTO prestamos values (NULL, NRO ,ISBN , 'FECHA' )

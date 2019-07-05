@@ -4,6 +4,8 @@ import baseDatos.SQLite;
 import modelos.Libro;
 import modelos.ManejadorLibro;
 import modelos.ManejadorSocio;
+import modelos.Prestamo;
+import modelos.Registro;
 import modelos.Socio;
 
 public class Inicio {
@@ -30,7 +32,15 @@ public class Inicio {
         socio.setNombre("Pablito");
         socio.setApellido("Clavito");
         ms.insertar(socio);
-
+        
+        Registro pr = new Registro(sqlite);
+        pr.crearTabla();
+        Prestamo prestam = new Prestamo();
+        socio.setNro(13);
+        libro.setISBN(100);
+        prestam.setFecha("05/07/1997");
+        pr.prestamo(libro,socio,prestam);
+        
         sqlite.apagar();
     }
 }

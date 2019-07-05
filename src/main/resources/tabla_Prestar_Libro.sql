@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS prestamos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    numeroSocio INTEGER,
+    numeroLibro INT NOT NULL,
+    fecha VARCHAR(100) NOT NULL
+);
