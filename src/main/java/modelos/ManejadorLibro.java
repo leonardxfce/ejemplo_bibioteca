@@ -43,4 +43,20 @@ public class ManejadorLibro {
         }
         return null;
     }
+
+    public void prestarLibro(Libro libro, Socio socio){
+        LibroPrestado libroPrestado = new LibroPrestado();
+        libroPrestado.setFecha("13/06/2019");
+        String sql = ma.abrirArchivo("libro_prestar.sql");
+        sql = sql.replace("nroSocio", Integer.toString(socio.nro));
+        sql = sql.replace("ISBN", Integer.toString(libro.ISBN));
+        sql = sql.replace("fecha", libroPrestado.fecha);
+        //System.out.println(sql);
+        sqLite.ejecutarMiSQL(sql);
+    }
+
+    public void crearTablaLibro() {
+        String sql = ma.abrirArchivo("tabla_prestarlibro.sql");
+        sqLite.ejecutarMiSQL(sql);
+    }
 }

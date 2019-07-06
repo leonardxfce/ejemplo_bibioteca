@@ -1,0 +1,1 @@
+INSERT INTO libro_prestado VALUES (NULL, nroSocio, ISBN, 'fecha');

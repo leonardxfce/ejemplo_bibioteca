@@ -1,10 +1,7 @@
 package inicio;
 
 import baseDatos.SQLite;
-import modelos.Libro;
-import modelos.ManejadorLibro;
-import modelos.ManejadorSocio;
-import modelos.Socio;
+import modelos.*;
 
 public class Inicio {
     public static void main(String[] args) {
@@ -18,7 +15,7 @@ public class Inicio {
         ml.insertar(libro);
 
         libro.setNombre("Pedro Urdemales");
-        libro.setISBN(200);
+        libro.setISBN(202);
         ml.insertar(libro);
 
         Libro x = ml.darUno(100);
@@ -29,8 +26,13 @@ public class Inicio {
         Socio socio = new Socio();
         socio.setNombre("Pablito");
         socio.setApellido("Clavito");
+        socio.setNro(36);
         ms.insertar(socio);
 
+        //
+        ml.crearTablaLibro();
+        ml.prestarLibro(libro, socio);
+        //
         sqlite.apagar();
     }
 }
