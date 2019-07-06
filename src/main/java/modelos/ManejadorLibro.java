@@ -33,6 +33,7 @@ public class ManejadorLibro {
         String sql = ma.abrirArchivo("libro_por_isbn.sql");
         sql = sql.replace("ID", Integer.toString(ISBN));
         ResultSet datos = sqLite.obtenerDatos(sql);
+        System.out.println(sql);
         libro = new Libro();
         try {
             libro.setNombre((String) datos.getObject("nombre"));
