@@ -12,5 +12,13 @@ public class Libro {
         this.ISBN = isbn;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getISBN() {
+        return ISBN;
+    }
+
 }
 

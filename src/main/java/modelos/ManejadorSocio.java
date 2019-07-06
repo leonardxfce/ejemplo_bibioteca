@@ -4,6 +4,7 @@ import baseDatos.SQLite;
 import utilidades.ManejadorDeArchivos;
 
 public class ManejadorSocio {
+
     SQLite sqLite;
     ManejadorDeArchivos ma;
     Socio socio;
@@ -22,7 +23,7 @@ public class ManejadorSocio {
         String sql = ma.abrirArchivo("nuevo_socio.sql");
         sql = sql.replace("NRO", Integer.toString(socio.nro));
         sql = sql.replace("NOMBRE", socio.nombre);
-        sql = sql.replace("APELLIDO",socio.apellido);
+        sql = sql.replace("APELLIDO", socio.apellido);
         sqLite.ejecutarMiSQL(sql);
     }
 

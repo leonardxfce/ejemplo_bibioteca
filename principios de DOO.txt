@@ -1,0 +1,10 @@
+Los principios que hemos utilizado son:
+DE GRASP:
+Invención pura: Creamos elementos no existentes en la realidad para desarrollar el sistema, como los paquetes "Base de datos","Manejador Archivo"
+Alta cohesión: Las clases tienen nombres significativos de lo que realizan
+Creador: Creamos clases que se dedican exclusivamente a fabricar objetos indicados por su nombre Libros, Socio, Registro
+DE POO:
+- Abstracción: convertimos objetos del mundo real en una clase.Ej: libros, socio, registro
+- Encapsulamiento: los atributos de algunas clases poseen protecci´n de modo "publica"
+de DOO: 
+-SOC: Separación de responsabilidades: El código esta dividido en clases para lograr el sistema completo

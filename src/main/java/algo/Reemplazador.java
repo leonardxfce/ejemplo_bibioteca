@@ -8,7 +8,7 @@ public class Reemplazador {
     String insertarSocioSQL(Socio socio) {
         String sql = "INSERT INTO SOCIO VALUES (NULL, 'NOMBRE', 'APELLIDO', NRO);";
         int nro = socio.getNro();
-        sql = sql.replace("NRO", String.valueOf(nro));
+        sql = sql.replace("NRO", String.valueOf(socio.getNro()));
         sql = sql.replace("NOMBRE", socio.getNombre());
         sql = sql.replace("APELLIDO", socio.getApellido());
         return sql;
