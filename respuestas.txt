@@ -1,0 +1,38 @@
+Los principios de DOO que utilice son:
+ 
+KISS usar la menor cantidad de condicionales
+DRY no reptir
+SOC separacion de responsabilidades
+YANGI codigo indespensable
+
+P.O.O
+HERENCIA
+ENCAPSULAMIENTO
+ABSTRACCION
+ENVIO DE MENSAJES
+
+Grasp
+
+Alta cohesion: hacer las clases con nombres significativos
+Experto en informacion: la clase tiene la informacion necesaria para cumplir una responsabilidad
+controlador es el responsable de recibir o controlar un evento (clase inicio) de un sistema 
+Inovasion pura: cuando modelamos situaciones de la vida real con objetos existe un salto en la representacion
+
+codigo Limpio
+
+*nombres con sentido 
+usar nombres que revelen la intensiones
+realizar distinciones con sentido
+usar nombres que se puedan pronunciar
+usar nombres que se puedan buscar
+
+
+*funciones
+hacer una cosa tamaño reducido 
+nivel de anstraccion por funcion
+usar nombres descriptivos 
+programacion estructurada
+usar nombres descriptivos
+*la funcion del formato del codigo se basa en la comunicacion debe ser el principal pilar del 
+desarrollo profesional. el estilo del codigo y su legibilidad establecen procedentes, afectuan  a la capasidad de mantenimiento y ampliacion mucho despues que el codigo cambie el estilo y la disiplina sobreviira aunque el codigo no
+

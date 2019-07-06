@@ -22,6 +22,8 @@ public class ManejadorSocio {
         String sql = ma.abrirArchivo("nuevo_socio.sql");
         sql = sql.replace("NOMBRE", socio.nombre);
         sql = sql.replace("APELLIDO",socio.apellido);
+        sql = sql.replace("nro",Integer.toString(socio.nro));
+
         sqLite.ejecutarMiSQL(sql);
     }
 

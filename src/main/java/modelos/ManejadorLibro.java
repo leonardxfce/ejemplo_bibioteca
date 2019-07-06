@@ -19,6 +19,7 @@ public class ManejadorLibro {
 
     public void crearTabla() {
         String sql = ma.abrirArchivo("libro.sql");
+        //System.out.println(sql);
         sqLite.ejecutarMiSQL(sql);
     }
 
