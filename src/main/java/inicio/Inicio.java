@@ -1,10 +1,7 @@
 package inicio;
 
 import baseDatos.SQLite;
-import modelos.Libro;
-import modelos.ManejadorLibro;
-import modelos.ManejadorSocio;
-import modelos.Socio;
+import modelos.*;
 
 public class Inicio {
     public static void main(String[] args) {
@@ -30,6 +27,14 @@ public class Inicio {
         socio.setNombre("Pablito");
         socio.setApellido("Clavito");
         ms.insertar(socio);
+
+        Prestamo prestamo = new Prestamo();
+        prestamo.setNroSocio(11);
+        prestamo.setISBN(300);
+        prestamo.setFecha("05/07/2019");
+        ManejadorPrestamo mp = new ManejadorPrestamo(sqlite);
+        mp.crearTabla();
+        mp.insertar(prestamo);
 
         sqlite.apagar();
     }
