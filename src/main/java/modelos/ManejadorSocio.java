@@ -23,6 +23,7 @@ public class ManejadorSocio {
         sql = sql.replace("NRO", Integer.toString(socio.nro));
         sql = sql.replace("NOMBRE", socio.nombre);
         sql = sql.replace("APELLIDO",socio.apellido);
+        //System.out.println(sql);
         sqLite.ejecutarMiSQL(sql);
     }
 
