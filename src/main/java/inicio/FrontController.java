@@ -1,5 +1,8 @@
 package inicio;
 
+import com.google.gson.Gson;
+import modelos.Libro;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,16 +11,16 @@ import java.io.PrintWriter;
 
 public class FrontController extends HttpServlet {
 
-    private String message;
 
-    public void init() {
-        message = "Hello World";
-    }
-
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<h1>Leonardo Araoz</h1>");
+    public void doGet(HttpServletRequest peticion, HttpServletResponse respuesta) throws IOException {
+        respuesta.setContentType("application/json");
+        PrintWriter out = respuesta.getWriter();
+        Libro libro = new Libro();
+        libro.setNombre("Los 3 mosqueteros");
+        libro.setISBN(1);
+        Gson gson = new Gson();
+        String libroJSON = gson.toJson(libro);
+        out.println(libroJSON);
     }
 
 }
